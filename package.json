@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "doc": "concurrently \"node bin/docgen.js\" \"vuepress dev .\"",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name index lib/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "module": "./src/index.ts",
   "dependencies": {
     "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.170",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
